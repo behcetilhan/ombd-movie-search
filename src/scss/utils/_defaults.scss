@@ -1,0 +1,23 @@
+$font-family-base: 'Lato', sans-serif !default;
+
+$genoa: #12727b;
+$carnation: #f66950;
+$cararra: #ece9e6;
+$cinnabar: #e74240;
+
+$primary: $genoa !default;
+$secondary: $carnation !default;
+$danger: $cinnabar !default;
+
+$input-padding-y: 1rem !default;
+$input-font-weight: 700;
+
+$transition-time: 0.3s;
+$transition-time-fast: 0.2s;
+$transition-type: ease-in-out;
+
+$font-size-base: 1rem;
+$fs--2: $font-size-base - 0.125rem !default;
+$fs-12: $font-size-base + 0.75rem !default;
+
+$input-font-size: $fs-12 !default;
