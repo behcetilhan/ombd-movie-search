@@ -1,4 +1,11 @@
-import * as Types from '../store/reducer/types';
+import axios from 'axios';
+
+export const omdbApi = axios.create({
+  baseURL: 'https://www.omdbapi.com/',
+});
+
+
+/* import * as Types from '../store/reducer/types';
 import axios from 'axios';
 import * as API_CONFIG from '../helpers/config';
 
@@ -50,3 +57,4 @@ export const apiRequest = (
     });
   }
 };
+ */

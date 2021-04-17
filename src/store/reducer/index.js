@@ -1,9 +1,10 @@
 import * as Types from './types';
 
 const {
-  SEARCH_MOVIES_REQUEST,
-  SEARCH_MOVIES_SUCCESS,
-  SEARCH_MOVIES_FAILURE,
+  GET_API_DATA,
+  DATA_LOADED,
+  API_ERROR,
+  SET_LOADING,
   SET_SEARCH_TITLE,
   SET_LAST_RESULTS,
   INPUT_INVALIDATE,
@@ -11,29 +12,34 @@ const {
 
 export const reducer = (state, action) => {
   switch (action.type) {
+    case DATA_LOADED:
+      return {
+        ...state,
+        loading: false,
+      };
+    case API_ERROR:
+      return {
+        ...state,
+        errorMessage: action.payload,
+        resultsVisible: action.resultsVisible,
+      };
+    case GET_API_DATA:
+      return {
+        ...state,
+        returnedData: action.payload,
+        inputEmpty: false,
+        resultsVisible: action.resultsVisible,
+      };
     case SET_SEARCH_TITLE:
       return {
         ...state,
         storedSearchValue: action.payload,
       };
-    case SEARCH_MOVIES_REQUEST:
+    case SET_LOADING:
       return {
         ...state,
         loading: true,
         errorMessage: null,
-      };
-    case SEARCH_MOVIES_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        movies: action.payload,
-        inputEmpty: false,
-      };
-    case SEARCH_MOVIES_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        errorMessage: action.error,
         inputEmpty: false,
       };
     case SET_LAST_RESULTS:

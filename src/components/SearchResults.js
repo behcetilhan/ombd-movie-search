@@ -4,19 +4,22 @@ import Movie from './Movie';
 
 const SearchResults = () => {
   const { state } = useContext(DataContext);
-  const { movies, storedSearchValue } = state;
+  const { returnedData, storedSearchValue } = state;
 
   const setMovieData = () => {
-    return movies.map((movie, i) => {
-      return (
-        <li
-          key={`${movie.imdbID}-${i}`}
-          className="b-search-results__list-item"
-        >
-          <Movie movie={movie} />
-        </li>
-      );
-    });
+    return (
+      returnedData &&
+      returnedData.map((movie, i) => {
+        return (
+          <li
+            key={`${movie.imdbID}-${i}`}
+            className="b-search-results__list-item"
+          >
+            <Movie movie={movie} />
+          </li>
+        );
+      })
+    );
   };
 
   return (

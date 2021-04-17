@@ -3,12 +3,14 @@ import { reducer } from '../reducer';
 import { getStorage } from '../../helpers/storageData';
 
 export const initialState = {
-  loading: false,
-  movies: [],
+  returnedData: [],
   errorMessage: null,
+  loading: false,
   storedSearchValue: '',
   searchResponses: getStorage('searchResponses') || [],
   inputEmpty: false,
+  resultsVisible: false,
+  searchInputPlaceholder: ''
 };
 
 export const DataContext = createContext();
