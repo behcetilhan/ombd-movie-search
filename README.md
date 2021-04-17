@@ -54,7 +54,7 @@ REACT_APP_API_KEY=xxx
 
 App uses axios to fetch data from [OMdb API](http://www.omdbapi.com/). Then it passes the returned data to localstorage and app context for app-wide usage.
 
-App is initialized with an itial state created and distributed by the Context. Also checks localstorage for any previous user searches
+App is initialized with an initial state created and distributed by the Context. Also it checks localstorage for any previous user searches
 
 ```sh
 export const initialState = {
