@@ -46,9 +46,13 @@ You will also see any lint errors in the console.
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 The build is minified and the filenames include the hashes.
 
+You will also need to create `.env` file in the root of the project and add an api key for OMdb API which you can acquire from [OMdb API Key](http://www.omdbapi.com/apikey.aspx)
+```sh
+REACT_APP_API_KEY=xxx
+```
 ## App Flow & Code Examples
 
-App uses axios to fetch data from [OMDB API](http://www.omdbapi.com/). Then it passes the returned data to localstorage and app context for app-wide usage.
+App uses axios to fetch data from [OMdb API](http://www.omdbapi.com/). Then it passes the returned data to localstorage and app context for app-wide usage.
 
 App is initializes with an itial state created and distributed by the Context. Also checks localstorage for any previous user searches
 
@@ -77,7 +81,6 @@ const MovieResultsProvider = (props) => {
 };
 
 export default MovieResultsProvider;
-
 ```
 
 `useFetch` is a custom hook which is used to call the data. Kudos to [onur.dev](https://onur.dev/writing/useFetch-react-hook). It can be initiated on component load or on given condition using `skip` prop
